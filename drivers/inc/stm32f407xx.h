@@ -33,7 +33,7 @@
  */
 #define NVIC_ICER0 			((__vo uint32_t*)0XE000E180)
 #define NVIC_ICER1			((__vo uint32_t*)0XE000E184)
-#define NVIC_ICER2  		((__vo uint32_t*)0XE000E188)
+#define NVIC_ICER2  			((__vo uint32_t*)0XE000E188)
 #define NVIC_ICER3			((__vo uint32_t*)0XE000E18C)
 
 
@@ -51,11 +51,11 @@
  * base addresses of Flash and SRAM memories
  */
 
-#define FLASH_BASEADDR						0x08000000U   		/*!<explain this macro briefly here  */
-#define SRAM1_BASEADDR						0x20000000U  		/*!<explain this macro briefly here  */
-#define SRAM2_BASEADDR						0x2001C000U 		/*!<explain this macro briefly here  */
+#define FLASH_BASEADDR						0x08000000U   		
+#define SRAM1_BASEADDR						0x20000000U  		
+#define SRAM2_BASEADDR						0x2001C000U 		
 #define ROM_BASEADDR						0x1FFF0000U
-#define SRAM 								SRAM1_BASEADDR
+#define SRAM 							SRAM1_BASEADDR
 
 
 /*
@@ -74,13 +74,13 @@
 
 #define GPIOA_BASEADDR                   		(AHB1PERIPH_BASEADDR + 0x0000)
 #define GPIOB_BASEADDR                   		(AHB1PERIPH_BASEADDR + 0x0400)
-#define GPIOC_BASEADDR 							(AHB1PERIPH_BASEADDR + 0x0800)
-#define GPIOD_BASEADDR 						 	(AHB1PERIPH_BASEADDR + 0x0C00)
-#define GPIOE_BASEADDR 					 		(AHB1PERIPH_BASEADDR + 0x1000)
-#define GPIOF_BASEADDR 					 		(AHB1PERIPH_BASEADDR + 0x1400)
-#define GPIOG_BASEADDR 					 		(AHB1PERIPH_BASEADDR + 0x1800)
-#define GPIOH_BASEADDR 					 		(AHB1PERIPH_BASEADDR + 0x1C00)
-#define GPIOI_BASEADDR 					 		(AHB1PERIPH_BASEADDR + 0x2000)
+#define GPIOC_BASEADDR 					(AHB1PERIPH_BASEADDR + 0x0800)
+#define GPIOD_BASEADDR 					(AHB1PERIPH_BASEADDR + 0x0C00)
+#define GPIOE_BASEADDR 					(AHB1PERIPH_BASEADDR + 0x1000)
+#define GPIOF_BASEADDR 					(AHB1PERIPH_BASEADDR + 0x1400)
+#define GPIOG_BASEADDR 					(AHB1PERIPH_BASEADDR + 0x1800)
+#define GPIOH_BASEADDR 					(AHB1PERIPH_BASEADDR + 0x1C00)
+#define GPIOI_BASEADDR 					(AHB1PERIPH_BASEADDR + 0x2000)
 #define RCC_BASEADDR                     		(AHB1PERIPH_BASEADDR + 0x3800)
 /*
  * Base addresses of peripherals which are hanging on APB1 bus
@@ -103,7 +103,7 @@
  */
 #define EXTI_BASEADDR						(APB2PERIPH_BASEADDR + 0x3C00)
 #define SPI1_BASEADDR						(APB2PERIPH_BASEADDR + 0x3000)
-#define SYSCFG_BASEADDR        				(APB2PERIPH_BASEADDR + 0x3800)
+#define SYSCFG_BASEADDR        					(APB2PERIPH_BASEADDR + 0x3800)
 #define USART1_BASEADDR						(APB2PERIPH_BASEADDR + 0x1000)
 #define USART6_BASEADDR						(APB2PERIPH_BASEADDR + 0x1400)
 
@@ -121,14 +121,14 @@
 typedef struct
 {
 	__vo uint32_t MODER;                        /*!< GPIO port mode register,                    	Address offset: 0x00      */
-	__vo uint32_t OTYPER;                       /*!< TODO,     										Address offset: 0x04      */
+	__vo uint32_t OTYPER;                       /*!< TODO,     					Address offset: 0x04      */
 	__vo uint32_t OSPEEDR;
 	__vo uint32_t PUPDR;
 	__vo uint32_t IDR;
 	__vo uint32_t ODR;
 	__vo uint32_t BSRR;
 	__vo uint32_t LCKR;
-	__vo uint32_t AFR[2];					 /*!< AFR[0] : GPIO alternate function low register, AF[1] : GPIO alternate function high register    		Address offset: 0x20-0x24 */
+	__vo uint32_t AFR[2];			   /*!< AFR[0] : GPIO alternate function low register, AF[1] : GPIO alternate function high register    		Address offset: 0x20-0x24 */
 }GPIO_RegDef_t;
 
 
@@ -182,12 +182,12 @@ typedef struct
  */
 typedef struct
 {
-	__vo uint32_t IMR;    /*!< Give a short description,          	  	    Address offset: 0x00 */
-	__vo uint32_t EMR;    /*!< ,                						Address offset: 0x04 */
-	__vo uint32_t RTSR;   /*!< ,  									     Address offset: 0x08 */
-	__vo uint32_t FTSR;   /*!< , 										Address offset: 0x0C */
-	__vo uint32_t SWIER;  /*!< ,  									   Address offset: 0x10 */
-	__vo uint32_t PR;     /*!< ,                   					   Address offset: 0x14 */
+	__vo uint32_t IMR;    /*!<,          	  	    			Address offset: 0x00 */
+	__vo uint32_t EMR;    /*!< ,                				Address offset: 0x04 */
+	__vo uint32_t RTSR;   /*!< ,  						Address offset: 0x08 */
+	__vo uint32_t FTSR;   /*!< , 						Address offset: 0x0C */
+	__vo uint32_t SWIER;  /*!< ,  						Address offset: 0x10 */
+	__vo uint32_t PR;     /*!< ,                   				Address offset: 0x14 */
 
 }EXTI_RegDef_t;
 
@@ -214,13 +214,13 @@ typedef struct
  */
 typedef struct
 {
-	__vo uint32_t MEMRMP;       /*!< Give a short description,                Address offset: 0x00      */
-	__vo uint32_t PMC;          /*!< ,     									  Address offset: 0x04      */
-	__vo uint32_t EXTICR[4];    /*!<  , 									  Address offset: 0x08-0x14 */
-	uint32_t      RESERVED1[2];  /*!<           							  Reserved, 0x18-0x1C    	*/
-	__vo uint32_t CMPCR;        /*!<          								  Address offset: 0x20      */
-	uint32_t      RESERVED2[2];  /*!<                                         Reserved, 0x24-0x28 	    */
-	__vo uint32_t CFGR;         /*!<                                          Address offset: 0x2C   	*/
+	__vo uint32_t MEMRMP;        /*!< ,                Address offset: 0x00       */
+	__vo uint32_t PMC;           /*!< ,     	   Address offset: 0x04       */
+	__vo uint32_t EXTICR[4];     /*!< , 		   Address offset: 0x08-0x14  */
+	uint32_t      RESERVED1[2];  /*!< ,          	   Reserved, 0x18-0x1C        */
+	__vo uint32_t CMPCR;         /*!< ,       	   Address offset: 0x20       */
+	uint32_t      RESERVED2[2];  /*!< ,                Reserved, 0x24-0x28 	      */
+	__vo uint32_t CFGR;          /*!< ,                Address offset: 0x2C       */
 } SYSCFG_RegDef_t;
 
 
@@ -458,18 +458,18 @@ typedef struct
 #define IRQ_NO_EXTI4 		10
 #define IRQ_NO_EXTI9_5 		23
 #define IRQ_NO_EXTI15_10 	40
-#define IRQ_NO_SPI1			35
-#define IRQ_NO_SPI2         36
-#define IRQ_NO_SPI3         51
+#define IRQ_NO_SPI1		35
+#define IRQ_NO_SPI2         	36
+#define IRQ_NO_SPI3         	51
 #define IRQ_NO_SPI4
-#define IRQ_NO_I2C1_EV     31
-#define IRQ_NO_I2C1_ER     32
-#define IRQ_NO_USART1	    37
-#define IRQ_NO_USART2	    38
-#define IRQ_NO_USART3	    39
-#define IRQ_NO_UART4	    52
-#define IRQ_NO_UART5	    53
-#define IRQ_NO_USART6	    71
+#define IRQ_NO_I2C1_EV     	31
+#define IRQ_NO_I2C1_ER     	32
+#define IRQ_NO_USART1	    	37
+#define IRQ_NO_USART2	    	38
+#define IRQ_NO_USART3	    	39
+#define IRQ_NO_UART4	    	52
+#define IRQ_NO_UART5	    	53
+#define IRQ_NO_USART6	    	71
 
 
 /*
@@ -486,9 +486,9 @@ typedef struct
 #define DISABLE 			0
 #define SET 				ENABLE
 #define RESET 				DISABLE
-#define GPIO_PIN_SET        SET
-#define GPIO_PIN_RESET      RESET
-#define FLAG_RESET         RESET
+#define GPIO_PIN_SET        		SET
+#define GPIO_PIN_RESET      		RESET
+#define FLAG_RESET         		RESET
 #define FLAG_SET 			SET
 
 
@@ -507,12 +507,12 @@ typedef struct
 #define SPI_CR1_LSBFIRST   			 	 7
 #define SPI_CR1_SSI     				 8
 #define SPI_CR1_SSM      				 9
-#define SPI_CR1_RXONLY      		 	10
+#define SPI_CR1_RXONLY      		 		10
 #define SPI_CR1_DFF     			 	11
 #define SPI_CR1_CRCNEXT   			 	12
 #define SPI_CR1_CRCEN   			 	13
 #define SPI_CR1_BIDIOE     			 	14
-#define SPI_CR1_BIDIMODE      			15
+#define SPI_CR1_BIDIMODE      				15
 
 /*
  * Bit position definitions SPI_CR2
@@ -520,7 +520,7 @@ typedef struct
 #define SPI_CR2_RXDMAEN		 			0
 #define SPI_CR2_TXDMAEN				 	1
 #define SPI_CR2_SSOE				 	2
-#define SPI_CR2_FRF						4
+#define SPI_CR2_FRF					4
 #define SPI_CR2_ERRIE					5
 #define SPI_CR2_RXNEIE				 	6
 #define SPI_CR2_TXEIE					7
@@ -531,9 +531,9 @@ typedef struct
  */
 #define SPI_SR_RXNE						0
 #define SPI_SR_TXE				 		1
-#define SPI_SR_CHSIDE				 	2
+#define SPI_SR_CHSIDE				 		2
 #define SPI_SR_UDR					 	3
-#define SPI_SR_CRCERR				 	4
+#define SPI_SR_CRCERR				 		4
 #define SPI_SR_MODF					 	5
 #define SPI_SR_OVR					 	6
 #define SPI_SR_BSY					 	7
@@ -547,7 +547,7 @@ typedef struct
 /*
  * Bit position definitions I2C_CR1
  */
-#define I2C_CR1_PE						0
+#define I2C_CR1_PE					0
 #define I2C_CR1_NOSTRETCH  				7
 #define I2C_CR1_START 					8
 #define I2C_CR1_STOP  				 	9
@@ -560,7 +560,7 @@ typedef struct
 #define I2C_CR2_FREQ				 	0
 #define I2C_CR2_ITERREN				 	8
 #define I2C_CR2_ITEVTEN				 	9
-#define I2C_CR2_ITBUFEN 			    10
+#define I2C_CR2_ITBUFEN 			    	10
 
 /*
  * Bit position definitions I2C_OAR1
@@ -574,7 +574,7 @@ typedef struct
  * Bit position definitions I2C_SR1
  */
 
-#define I2C_SR1_SB 					 	0
+#define I2C_SR1_SB 					0
 #define I2C_SR1_ADDR 				 	1
 #define I2C_SR1_BTF 					2
 #define I2C_SR1_ADD10 					3
@@ -583,14 +583,14 @@ typedef struct
 #define I2C_SR1_TXE 					7
 #define I2C_SR1_BERR 					8
 #define I2C_SR1_ARLO 					9
-#define I2C_SR1_AF 					 	10
+#define I2C_SR1_AF 					10
 #define I2C_SR1_OVR 					11
 #define I2C_SR1_TIMEOUT 				14
 
 /*
  * Bit position definitions I2C_SR2
  */
-#define I2C_SR2_MSL						0
+#define I2C_SR2_MSL					0
 #define I2C_SR2_BUSY 					1
 #define I2C_SR2_TRA 					2
 #define I2C_SR2_GENCALL 				4
@@ -665,12 +665,12 @@ typedef struct
 #define USART_SR_FE        				1
 #define USART_SR_NE        				2
 #define USART_SR_ORE       				3
-#define USART_SR_IDLE       			4
-#define USART_SR_RXNE        			5
+#define USART_SR_IDLE       				4
+#define USART_SR_RXNE        				5
 #define USART_SR_TC        				6
-#define USART_SR_TXE        			7
-#define USART_SR_LBD        			8
-#define USART_SR_CTS        			9
+#define USART_SR_TXE        				7
+#define USART_SR_LBD        				8
+#define USART_SR_CTS        				9
 
 
 #include "stm32f407xx_gpio_driver.h"
